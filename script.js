@@ -1,28 +1,61 @@
+// Velora — Responsive Search
+// Paste this entire <script> block just before </body> in index.html
 
-  const searchBox = document.querySelector('.search-box');
-  const searchIcon = document.querySelector('.search-box i');
-  const searchInput = document.querySelector('.search-box input');
+const searchBox   = document.querySelector('.search-box');
+const searchIcon  = document.querySelector('.search-box i');
+const searchInput = document.querySelector('.search-box input');
 
-  searchIcon.addEventListener('click', () => {
-    // Only toggle on small screens where input is hidden
-    if (window.innerWidth <= 650) {
-      searchBox.classList.toggle('open');
-      if (searchBox.classList.contains('open')) {
-        searchInput.focus();
-      }
+// The breakpoint where the input gets hidden (must match CSS media query)
+const MOBILE_BREAKPOINT = 650;
+
+function isSmallScreen() {
+  return window.innerWidth <= MOBILE_BREAKPOINT;
+}
+
+function openSearch() {
+  searchBox.classList.add('open');
+  searchInput.focus();
+}
+
+function closeSearch() {
+  searchBox.classList.remove('open');
+  searchInput.blur();
+}
+
+searchIcon.addEventListener('click', (e) => {
+  e.stopPropagation(); // prevent bubbling to document listener
+
+  if (isSmallScreen()) {
+    // Small screen: toggle the floating search box
+    if (searchBox.classList.contains('open')) {
+      closeSearch();
+    } else {
+      openSearch();
     }
-  });
+  } else {
+    // Large screen: search bar is always visible — just focus the input
+    searchInput.focus();
+  }
+});
 
-  // Close when user clicks outside
-  document.addEventListener('click', (e) => {
-    if (!searchBox.contains(e.target)) {
-      searchBox.classList.remove('open');
-    }
-  });
+// Close when clicking anywhere outside the search box
+document.addEventListener('click', (e) => {
+  if (!searchBox.contains(e.target)) {
+    closeSearch();
+  }
+});
 
-  // Close when user presses Enter
-  searchInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-      searchBox.classList.remove('open');
-    }
-  });
+// Close on Enter (after user finishes typing)
+searchInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    // TODO: wire up actual search logic here if needed
+    closeSearch();
+  }
+});
+
+// If user resizes from small → large while open, clean up the open state
+window.addEventListener('resize', () => {
+  if (!isSmallScreen() && searchBox.classList.contains('open')) {
+    closeSearch();
+  }
+});

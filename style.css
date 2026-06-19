@@ -373,16 +373,30 @@
   }
 
   .search-box.open {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
     background: white;
     border-color: #ccc;
-    width: 180px;
-    margin-right: 8px;
+    width: 220px;
+    margin: 0;
+    padding: 0.15rem 0.5rem;
+    /* fade + slight slide in from right */
+    animation: searchSlideIn 0.2s ease forwards;
+  }
+
+  @keyframes searchSlideIn {
+    from { opacity: 0; transform: translateY(-50%) translateX(10px); }
+    to   { opacity: 1; transform: translateY(-50%) translateX(0);    }
   }
 
   .search-box.open input {
     display: block;
     width: 100%;
     color: #000;
+    background: transparent;
   }
 
   .search-box.open i {
@@ -392,6 +406,7 @@
   .search-box i {
     color: white;
     font-size: 14px;
+    cursor: pointer;
   }
 
   .elements {
