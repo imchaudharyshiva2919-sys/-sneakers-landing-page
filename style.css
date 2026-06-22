@@ -664,10 +664,10 @@
 
 
 .featured-card img{
-    width: 80%;
+    width: 70%;
     position: absolute;
     rotate: 15deg;
-    right: 30%;
+    right: 35%;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -676,7 +676,6 @@
   position: absolute;
   color: rgb(255, 94, 121);
   display: inline;
-  stroke-width: 2px solid black;
   left: 50%;
   top: 20%;
   font-size: clamp(2rem ,6vw ,5rem);
@@ -688,8 +687,6 @@
 .featured-card h2{
   position: absolute;
   color: rgb(0, 0, 0);
-  display: inline;
-  stroke-width: 2px solid black;
   left: 50%;
   top: 35%;
   font-size: clamp(1rem ,4.5vw ,4rem);
@@ -716,14 +713,25 @@
 .featured-button{
   z-index: 3;
   color: white;
-  font-weight: 700;
-  width: 10%;
   font-size: clamp(0.5rem , 1vw , 3rem);
   position: absolute;
   left: 80%;
   top: 60%;
   background-color: rgb(255, 94, 121);
-  padding: 7px 5px;
+  padding:.8em 1.6em;
   border-radius: 5px;
-  display: inline;
+
+}
+
+.velora-icon{
+  top: 10%;
+  left: 7%;
+  position: absolute;
+  width: 10%;
+}
+
+.icon{
+  position: relative;
+  top: 90%;
+  left: 5%;
 }
