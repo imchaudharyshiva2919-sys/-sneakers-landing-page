@@ -359,15 +359,26 @@
 .cart-icon:hover { transform: scale(1.15); }
 
 
+
 .featured-product {
   border: 3px solid black;
   margin-top: 20px;
-  position: relative;
-  display: flex;
   width: 100%;
-  aspect-ratio: 16 / 12;
   overflow: hidden;
-  zoom: calc(100vw / 1200px);
+
+  padding-bottom: 75vw;
+  position: relative;
+}
+
+.featured-scaler {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1200px;
+  aspect-ratio: 16 / 12;
+  display: flex;
+  transform-origin: top left;
+  transform: scale(calc(100vw / 1200px));
 }
 
 .pink-box  { flex: 0.35; background-color: rgb(255,94,121); }
