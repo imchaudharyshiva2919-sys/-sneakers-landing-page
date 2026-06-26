@@ -6,6 +6,8 @@
   box-sizing: border-box;
 }
 
+/*=============== NAVBAR =============*/
+
 .navbar {
   position: relative;
   display: flex;
@@ -130,6 +132,8 @@
 
 .wish-cart i:hover { color: bisque; }
 
+/*=========== Hero Section ===========*/
+
 .hero {
   min-height: 25vh;
   padding: 4rem 2rem;
@@ -176,6 +180,8 @@
   color: #2c2c2a;
   transform: translateY(-2px) scale(1.05);
 }
+
+/*=========== Brand Section =============*/
 
 .brand-items { width: 100%; }
 
@@ -271,6 +277,8 @@
 .tag h1 { font-weight: 600; }
 .tag p  { line-height: 1.8; }
 
+/*========== Collection Section ===========*/
+
 .shoes {
   display: flex;
   justify-content: flex-start;
@@ -303,6 +311,7 @@
 .shoe2:hover { box-shadow: 0 0 30px rgb(100,78,78); }
 .shoe3:hover { box-shadow: 0 0 30px rgb(45,132,52); }
 .shoe4:hover { box-shadow: 0 0 30px rgb(255,89,0); }
+.shoe5:hover {box-shadow: 0 0 30px rgb(0, 63, 1);}
 
 .shoe-image { position: relative; }
 
@@ -320,6 +329,7 @@
 .shoe2 img { background: rgb(108,108,108); }
 .shoe3 img { background: rgb(73,134,78); }
 .shoe4 img { background: rgb(83,46,0); object-fit: cover; }
+.shoe5 img {background: rgb(6, 46, 0); object-fit: cover;}
 
 .wishlist {
   position: absolute;
@@ -357,6 +367,8 @@
 
 .cart-icon       { font-size: 1.2rem; cursor: pointer; transition: .3s; }
 .cart-icon:hover { transform: scale(1.15); }
+
+/*============= Featured Section ==============*/
 
 .featured-product {
   border: 3px solid black;
@@ -530,6 +542,8 @@
   transform: translate(-50%,-50%) rotate(-45deg);
 }
 
+/* Media Queries */
+
 @media (max-width: 1024px) {
   .search-box { width: 180px; margin-right: 16px; }
   .elements   { gap: 1.2rem; margin-right: 18px; }
@@ -610,3 +624,4 @@
   zoom: calc(100vw / 1200px);
 }
 }
+
