@@ -59,3 +59,15 @@ window.addEventListener('resize', () => {
     closeSearch();
   }
 });
+
+function scaleFeatured() {
+  const scaler = document.querySelector('.featured-scaler');
+  const product = document.querySelector('.featured-product');
+  const scale = window.innerWidth / 1200;
+  scaler.style.transform = `scale(${scale})`;
+  scaler.style.transformOrigin = 'top left';
+  product.style.height = (900 * scale) + 'px';
+}
+
+scaleFeatured();
+window.addEventListener('resize', scaleFeatured);

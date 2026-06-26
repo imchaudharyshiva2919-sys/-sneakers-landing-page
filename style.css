@@ -1,16 +1,10 @@
-/* VELORA — Sneakers Landing Page */
-
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@700&display=swap');
-
-/*   RESET   */
 
 *, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-/*   NAVBAR   */
 
 .navbar {
   position: relative;
@@ -136,8 +130,6 @@
 
 .wish-cart i:hover { color: bisque; }
 
-/*   HERO   */
-
 .hero {
   min-height: 25vh;
   padding: 4rem 2rem;
@@ -185,8 +177,6 @@
   transform: translateY(-2px) scale(1.05);
 }
 
-/*   BRAND SECTION   */
-
 .brand-items { width: 100%; }
 
 .brand {
@@ -206,7 +196,7 @@
 
 .overlay-text {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -220,14 +210,14 @@
 
 .overlay-text h3 {
   color: bisque;
-  font-size: clamp(1rem, 4vw, 1.5rem);
+  font-size: clamp(0.7rem, 2vw, 1.2rem);
   font-family: "Bebas Neue", sans-serif;
   letter-spacing: 0.2rem;
 }
 
 .overlay-text h1 {
   color: rgb(255, 155, 33);
-  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-size: clamp(2rem, 4vw, 3.2rem);
   letter-spacing: 0.5rem;
   font-family: "Caveat", cursive;
 }
@@ -251,7 +241,7 @@
 .title h2 {
   color: rgb(255, 155, 33);
   font-family: "Bebas Neue", sans-serif;
-  font-size: clamp(1.8rem, 4vw, 2rem);
+  font-size: clamp(1.5rem, 3vw, 2rem);
   letter-spacing: 0.2rem;
 }
 
@@ -260,11 +250,9 @@
   font-family: "Bebas Neue", sans-serif;
   font-weight: 200;
   letter-spacing: 0.12rem;
-  line-height: 1.6;
+  line-height: 1.3;
   text-align: center;
 }
-
-/* ============  COLLECTION  ============ */
 
 .collection {
   margin-top: 20px;
@@ -283,7 +271,6 @@
 .tag h1 { font-weight: 600; }
 .tag p  { line-height: 1.8; }
 
-
 .shoes {
   display: flex;
   justify-content: flex-start;
@@ -295,8 +282,12 @@
   padding-bottom: 10px;
 }
 
+.shoes::-webkit-scrollbar { height: 4px; }
+.shoes::-webkit-scrollbar-track { background: transparent; }
+.shoes::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 2px; }
+
 .shoe {
-  width: clamp(200px, 25%, 300px);
+  width: clamp(160px, 25%, 300px);
   flex-shrink: 0;
   scroll-snap-align: start;
   border-radius: 12px;
@@ -304,13 +295,14 @@
   border: 2px solid #0000001a;
   transition: .3s ease;
   box-shadow: 0 8px 32px rgba(0,0,0,0.3),
-  inset 0 1px 1px rgba(255,255,255,0.25);
+              inset 0 1px 1px rgba(255,255,255,0.25);
 }
 
-.shoe:hover        { transform: translateY(-6px); }
-.shoe1:hover       { box-shadow: 0 0 30px rgba(182,135,77,.45); }
-.shoe2:hover       { box-shadow: 0 0 30px rgba(100,78,78,.45); }
-.shoe3:hover       { box-shadow: 0 0 30px rgba(45,132,52,.45); }
+.shoe:hover  { transform: translateY(-6px); }
+.shoe1:hover { box-shadow: 0 0 30px rgb(188,136,73); }
+.shoe2:hover { box-shadow: 0 0 30px rgb(100,78,78); }
+.shoe3:hover { box-shadow: 0 0 30px rgb(45,132,52); }
+.shoe4:hover { box-shadow: 0 0 30px rgb(255,89,0); }
 
 .shoe-image { position: relative; }
 
@@ -326,7 +318,8 @@
 
 .shoe1 img { background: rgb(177,155,128); }
 .shoe2 img { background: rgb(108,108,108); }
-.shoe3 img { background: rgb(73,134,78);   }
+.shoe3 img { background: rgb(73,134,78); }
+.shoe4 img { background: rgb(83,46,0); object-fit: cover; }
 
 .wishlist {
   position: absolute;
@@ -365,16 +358,12 @@
 .cart-icon       { font-size: 1.2rem; cursor: pointer; transition: .3s; }
 .cart-icon:hover { transform: scale(1.15); }
 
-
-
 .featured-product {
   border: 3px solid black;
   margin-top: 20px;
   width: 100%;
-  overflow: hidden;
-
-  padding-bottom: calc(100vw * 0.75);
   position: relative;
+  overflow: hidden;
 }
 
 .featured-scaler {
@@ -382,10 +371,9 @@
   top: 0;
   left: 0;
   width: 1200px;
-  aspect-ratio: 16 / 12;
+  height: 900px;
   display: flex;
   transform-origin: top left;
-  transform: scale(calc(100vw / 1200px));
 }
 
 .pink-box  { flex: 0.35; background-color: rgb(255,94,121); }
@@ -502,9 +490,9 @@
   transition: 0.3s ease;
 }
 
-.arctic  { left: 40%;                           background-color: rgba(0,183,255,0.233); }
-.crimson { left: calc(40% + 12% + 5%);          background-color: rgba(255,0,0,0.233);   }
-.olive   { left: calc(40% + (12%*2) + (5%*2));  background-color: rgba(128,128,0,0.249); }
+.arctic  { left: 40%;                          background-color: rgba(0,183,255,0.233); }
+.crimson { left: calc(40% + 12% + 5%);         background-color: rgba(255,0,0,0.233); }
+.olive   { left: calc(40% + (12%*2) + (5%*2)); background-color: rgba(128,128,0,0.249); }
 
 .arctic:hover,
 .crimson:hover,
@@ -524,7 +512,7 @@
 .olive h3 {
   position: absolute;
   top: 75%;
-  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+  font-size: clamp(0.6rem,1.5vw,0.9rem);
   padding-right: 5px;
 }
 
@@ -535,31 +523,26 @@
   left: 35%;
   top: 50%;
   border-radius: 50%;
-border-top:    55px solid white;
-border-right:  55px solid rgb(255,94,121);
-border-bottom: 55px solid rgb(255,94,121);
-border-left:   55px solid white;
-transform: translate(-50%,-50%) rotate(-45deg);
+  border-top:    55px solid white;
+  border-right:  55px solid rgb(255,94,121);
+  border-bottom: 55px solid rgb(255,94,121);
+  border-left:   55px solid white;
+  transform: translate(-50%,-50%) rotate(-45deg);
 }
 
-/* RESPONSIVE BREAKPOINTS */
-
-/* 1024px */
 @media (max-width: 1024px) {
   .search-box { width: 180px; margin-right: 16px; }
-  .elements   { gap: 1.2rem;  margin-right: 18px; }
+  .elements   { gap: 1.2rem; margin-right: 18px; }
 }
 
-/* 900px */
 @media (max-width: 900px) {
   .search-box { width: 150px; margin-right: 12px; }
-  .elements   { gap: 0.9rem;  margin-right: 14px; }
+  .elements   { gap: 0.9rem; margin-right: 14px; }
   .elements a { font-size: 0.78rem; letter-spacing: 0.02em; }
   .logo h1    { font-size: 1rem; }
   .wish-cart  { gap: 14px; }
 }
 
-/* 768px — collection */
 @media (max-width: 768px) {
   .tag    { flex-direction: column; gap: 1rem; padding: 1.5rem; }
   .tag h1 { font-size: clamp(1rem,3.5vw,1.4rem); }
@@ -567,11 +550,10 @@ transform: translate(-50%,-50%) rotate(-45deg);
   .shoes  { gap: 14px; margin: 24px 12px; }
 }
 
-/* 650px — 2-row navbar */
 @media (max-width: 650px) {
-  .navbar     { height: auto; flex-wrap: wrap; padding: 8px 12px; gap: 6px; }
-  .logo       { order: 1; flex: 1; }
-  .wish-cart  { order: 2; flex: 0; }
+  .navbar    { height: auto; flex-wrap: wrap; padding: 8px 12px; gap: 6px; }
+  .logo      { order: 1; flex: 1; }
+  .wish-cart { order: 2; flex: 0; }
 
   .search-box {
     order: 3; flex: 0; width: auto;
@@ -593,7 +575,7 @@ transform: translate(-50%,-50%) rotate(-45deg);
 
   @keyframes searchSlideIn {
     from { opacity: 0; transform: translateY(-50%) translateX(10px); }
-    to   { opacity: 1; transform: translateY(-50%) translateX(0);    }
+    to   { opacity: 1; transform: translateY(-50%) translateX(0); }
   }
 
   .search-box.open input { display: block; width: 100%; color: #000; background: transparent; }
@@ -605,7 +587,6 @@ transform: translate(-50%,-50%) rotate(-45deg);
   .logo h1    { font-size: 0.95rem; }
 }
 
-/* 600px — collection stack + hero tweaks */
 @media (max-width: 600px) {
   .hero-logo       { letter-spacing: 0.8rem; font-size: 2.2rem; }
   .hero-cta        { padding: 0.9rem 1.2rem; }
@@ -613,27 +594,19 @@ transform: translate(-50%,-50%) rotate(-45deg);
   .overlay-text h3 { letter-spacing: 2px; }
   .shoe-title h3   { font-size: 1rem; }
   .shoe-info p     { font-size: 0.9rem; }
+  .shoes           { gap: 12px; margin: 20px 10px; }
+  .shoe            { width: 70vw; }
 }
 
-/* 420px — very small navbar */
 @media (max-width: 420px) {
   .search-box      { display: flex; margin-right: 4px; }
   .search-box.open { width: 140px; }
   .elements        { gap: 0.45rem; }
   .elements a      { font-size: 0.68rem; letter-spacing: 0; }
-}
+  .shoe            { width: 80vw; }
 
-@media (max-width: 600px) {
   .featured-product {
-    padding-bottom: calc(100vw * 0.75);
-  }
-
-  .shoes {
-    gap: 12px;
-    margin: 20px 10px;
-  }
-
-  .shoe {
-    width: clamp(160px, 70vw, 220px);
-  }
+  aspect-ratio: 16 / 12;
+  zoom: calc(100vw / 1200px);
+}
 }
