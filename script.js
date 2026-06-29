@@ -85,57 +85,98 @@ window.addEventListener('resize', scaleFeatured);
 
 
 //======================== Slider =====================//
-
-const shoes=[
+const shoes = [
 {
-name:"Velocity Rise 01",
-price:"₹6,999",
-mainImage:"images/Arctic Flow 02.png",
-thumbnails:[
-"https://picsum.photos/seed/a1/70/70",
-"https://picsum.photos/seed/a2/70/70",
-"https://picsum.photos/seed/a3/70/70"
-]
+    name:"Velocity Rise 01",
+    price:"₹6,999",
+    mainImage:"images/VELORA Nova.png",
+    thumbnails:[
+        "images/VELORA Nova(1).png",
+        "images/VELORA Nova(2).png",
+        "images/VELORA Nova(3).png"
+    ]
 },
 {
-name:"Velocity Rise 02",
-price:"₹7,499",
-mainImage:"images/Crimson Blaze 03.png",
-thumbnails:[
-"https://picsum.photos/seed/b1/70/70",
-"https://picsum.photos/seed/b2/70/70",
-"https://picsum.photos/seed/b3/70/70"
-]
+    name:"Velocity Rise 02",
+    price:"₹7,499",
+    mainImage:"images/VELORA Eclipse.png",
+    thumbnails:[
+        "images/VELORA Eclipse(1).png",
+        "images/VELORA Eclipse(2).png",
+        "images/VELORA Eclipse(3).png"
+    ]
 },
 {
-name:"Velocity Rise 03",
-price:"₹8,299",
-mainImage:"images/Olive Crest 04.png",
-thumbnails:[
-"https://picsum.photos/seed/c1/70/70",
-"https://picsum.photos/seed/c2/70/70",
-"https://picsum.photos/seed/c3/70/70"
-]
+    name:"Velocity Rise 03",
+    price:"₹8,299",
+    mainImage:"images/VELORA Horizon.png",
+    thumbnails:[
+        "images/VELORA Horizon(1).png",
+        "images/VELORA Horizon(2).png",
+        "images/VELORA Horizon(3).png"
+    ]
+},
+{
+    name:"Velocity Rise 04",
+    price:"₹8,999",
+    mainImage:"images/VELORA Zenith.png",
+    thumbnails:[
+        "images/VELORA Zenith(1).png",
+        "images/VELORA Zenith(2).png",
+        "images/VELORA Zenith(3).png"
+    ]
 }
 ];
 
-const shoeName=document.getElementById("shoeName");
-const price=document.getElementById("price");
-const mainImage=document.getElementById("mainImage");
-const thumb1=document.getElementById("thumb1");
-const thumb2=document.getElementById("thumb2");
-const thumb3=document.getElementById("thumb3");
+const shoeName = document.getElementById("shoeName");
+const price = document.getElementById("price");
+const mainImage = document.getElementById("mainImage");
 
-function changeShoe(index){
-    const shoe=shoes[index];
+const thumb1 = document.getElementById("thumb1");
+const thumb2 = document.getElementById("thumb2");
+const thumb3 = document.getElementById("thumb3");
 
-    shoeName.textContent=shoe.name;
-    price.textContent=shoe.price;
-    mainImage.src=shoe.mainImage;
+const previewContainer = document.getElementById("previewContainer");
 
-    thumb1.src=shoe.thumbnails[0];
-    thumb2.src=shoe.thumbnails[1];
-    thumb3.src=shoe.thumbnails[2];
+// Show the 4th shoe by default
+let currentIndex = 3;
+
+function renderPage() {
+
+    const shoe = shoes[currentIndex];
+
+    shoeName.textContent = shoe.name;
+    price.textContent = shoe.price;
+    mainImage.src = shoe.mainImage;
+
+    thumb1.src = shoe.thumbnails[0];
+    thumb2.src = shoe.thumbnails[1];
+    thumb3.src = shoe.thumbnails[2];
+
+    previewContainer.innerHTML = "";
+
+    shoes.forEach((shoe, index) => {
+
+        if(index !== currentIndex){
+
+            const img = document.createElement("img");
+
+            img.src = shoe.mainImage;
+            img.className = "preview";
+
+            img.addEventListener("click", function(){
+
+                currentIndex = index;
+                renderPage();
+
+            });
+
+            previewContainer.appendChild(img);
+
+        }
+
+    });
+
 }
 
-changeShoe(0);
+renderPage();
