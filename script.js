@@ -94,7 +94,8 @@ const shoes = [
         "images/VELORA Nova(1).png",
         "images/VELORA Nova(2).png",
         "images/VELORA Nova(3).png"
-    ]
+    ],
+    color: "#000000"
 },
 {
     name:"Velocity Rise 02",
@@ -104,7 +105,8 @@ const shoes = [
         "images/VELORA Eclipse(1).png",
         "images/VELORA Eclipse(2).png",
         "images/VELORA Eclipse(3).png"
-    ]
+    ],
+    color: "#c072c4"
 },
 {
     name:"Velocity Rise 03",
@@ -114,7 +116,8 @@ const shoes = [
         "images/VELORA Horizon(1).png",
         "images/VELORA Horizon(2).png",
         "images/VELORA Horizon(3).png"
-    ]
+    ],
+    color: "#01255b"
 },
 {
     name:"Velocity Rise 04",
@@ -124,7 +127,8 @@ const shoes = [
         "images/VELORA Zenith(1).png",
         "images/VELORA Zenith(2).png",
         "images/VELORA Zenith(3).png"
-    ]
+    ],
+    color: "#daaa63"
 }
 ];
 
@@ -135,6 +139,8 @@ const mainImage = document.getElementById("mainImage");
 const thumb1 = document.getElementById("thumb1");
 const thumb2 = document.getElementById("thumb2");
 const thumb3 = document.getElementById("thumb3");
+const center = document.querySelector(".center");
+const sizes = document.querySelectorAll(".sizeChart");
 
 const previewContainer = document.getElementById("previewContainer");
 
@@ -144,7 +150,7 @@ let currentIndex = 3;
 function renderPage() {
 
     const shoe = shoes[currentIndex];
-
+    center.style.background = shoe.color
     shoeName.textContent = shoe.name;
     price.textContent = shoe.price;
     mainImage.src = shoe.mainImage;
@@ -180,3 +186,17 @@ function renderPage() {
 }
 
 renderPage();
+
+sizes.forEach((size) => {
+
+    size.addEventListener("click", function(){
+
+        sizes.forEach((item) => {
+            item.classList.remove("active");
+        });
+
+        this.classList.add("active");
+
+    });
+
+});

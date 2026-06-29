@@ -663,7 +663,7 @@ body{
     min-height:400px;
     height: auto;
 
-    background:#fff;
+    background:#311111;
     border-radius:15px;
 
     padding:20px;
@@ -676,11 +676,14 @@ body{
 }
 
 .left h3{
+    color: white;
     margin-bottom:20px;
     text-align:center;
 }
 
 .preview{
+    border: 1px solid white;
+
     width:100%;
     
     object-fit:cover;
@@ -696,6 +699,8 @@ body{
 
 .preview:hover{
     transform:scale(1.05);
+
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.174);
 }
 
 /* ================= CENTER ================= */
@@ -710,8 +715,6 @@ body{
     min-height:450px;
 
     height: auto;
-
-    background:#fff;
 
     border-radius:18px;
 
@@ -733,6 +736,7 @@ body{
 }
 
 #shoeName{
+    color: white;
     margin-bottom:20px;
 }
 
@@ -755,8 +759,8 @@ body{
 .thumbs img{
     width:30%;
     aspect-ratio:1;
-    object-fit:cover;
-
+    object-fit:contain;
+    border: 2px solid white;
     border-radius:10px;
     cursor:pointer;
     transition:.3s;
@@ -869,4 +873,9 @@ body{
     transform:translateY(-2px);
 
     box-shadow:0 10px 20px rgba(255,77,77,.25);
+}
+
+.sizeChart.active{
+    background-color: red;
+    color: white;
 }
