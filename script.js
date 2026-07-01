@@ -84,7 +84,7 @@ window.addEventListener('resize', scaleFeatured);
 // ]
 
 
-//======================== Slider =====================//
+//======================== Product Preview =====================//
 const shoes = [
 {
     name:"Velocity Rise 01",
@@ -144,8 +144,8 @@ const sizes = document.querySelectorAll(".sizeChart");
 
 const previewContainer = document.getElementById("previewContainer");
 
-// Show the 4th shoe by default
-let currentIndex = 3;
+// 1st shoe by default
+let currentIndex = 0;
 
 function renderPage() {
 

@@ -636,20 +636,12 @@ body{
 }
 }
 
-/*=============== Slider ===============*/
-
-.containInner{
-  background: linear-gradient(
-        to right,
-        #7a0000 0%,
-        #293ba1 100%
-    );
-    margin: 0;
-}
+/*=============== Product Preview ===============*/
 
 .contain{
-    width:95%;
-    margin:40px auto;
+    padding-top: 20px;
+    width:100%;
+    background-color: rgb(46, 1, 1);
     display:flex;
     justify-content:center;
     align-items:center;
@@ -664,8 +656,8 @@ body{
     height: auto;
 
     background:#311111;
-    border-radius:15px;
-
+    border-top: 1px solid white;
+    border-bottom:1px solid white;
     padding:20px;
 
     display:flex;
@@ -715,8 +707,6 @@ body{
     min-height:450px;
 
     height: auto;
-
-    border-radius:18px;
 
     box-shadow:0 10px 20px rgba(0,0,0,.12);
 
@@ -812,9 +802,7 @@ body{
     min-height:400px;
     height: auto;
 
-    background:#fff;
-
-    border-radius:15px;
+    background:#020202;
 
     box-shadow:0 10px 20px rgba(0,0,0,.12);
 
@@ -825,14 +813,16 @@ body{
     align-items:center;
 
     padding:20px;
+    color: white;
 }
 
 .right h3{
     margin-bottom:10px;
+    color: white;
 }
 
 #price{
-
+    color: white;
     font-size:30px;
 
     margin-bottom:30px;
@@ -851,6 +841,7 @@ body{
 }
 
 .sizeChart{
+  color: black;
     width:100%;
     aspect-ratio:1;
     min-width: 30px;
@@ -878,4 +869,61 @@ body{
 .sizeChart.active{
     background-color: red;
     color: white;
+}
+
+/*=========== Media Queries ============*/
+
+@media (max-width:900px){
+
+    .contain{
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .left,
+    .center,
+    .right{
+        width:100%;
+    }
+
+    .left{
+        min-height:auto;
+        padding:15px;
+    }
+
+    #previewContainer{
+        display:flex;
+        justify-content:space-between;
+        gap:8px;
+    }
+
+    .preview{
+        width:31%;
+        aspect-ratio:1;
+        object-fit:contain;
+        margin:0;
+    }
+
+    .center{
+        min-height:auto;
+    }
+
+    .right{
+        min-height:auto;
+    }
+
+    .right h3{
+        margin-bottom:8px;
+    }
+
+    #price{
+        margin-bottom:18px;
+        font-size:2rem;
+    }
+
+    .sizes{
+        margin-top:12px;
+        grid-template-columns:repeat(6,1fr);
+    }
+
 }
